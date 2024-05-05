@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>College Debate - Login</title>
+<!-- Bootstrap CSS -->
+<link
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+	rel="stylesheet">
+<link type="text/css" rel="stylesheet" th:href="@{/css/styles.css}"
+	href="/css/styles.css" />
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<a class="navbar-brand" th:href="@{/}"> <svg class="mb-2"
+				stroke="currentColor" fill="currentColor" stroke-width="0"
+				viewBox="0 0 640 512" height="1em" width="1em"
+				xmlns="http://www.w3.org/2000/svg">
+            <path
+					d="M48 0C21.5 0 0 21.5 0 48V464c0 26.5 21.5 48 48 48h96V432c0-26.5 21.5-48 48-48s48 21.5 48 48v80h89.9c-6.3-10.2-9.9-22.2-9.9-35.1c0-46.9 25.8-87.8 64-109.2V271.8 48c0-26.5-21.5-48-48-48H48zM64 240c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V240zm112-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H176c-8.8 0-16-7.2-16-16V240c0-8.8 7.2-16 16-16zm80 16c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H272c-8.8 0-16-7.2-16-16V240zM80 96h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16zm80 16c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H176c-8.8 0-16-7.2-16-16V112zM272 96h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H272c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16zM576 272a80 80 0 1 0 -160 0 80 80 0 1 0 160 0zM352 477.1c0 19.3 13.8 36.2 32 39.6V464h-64v52.6c18.2-3.4 32-20.3 32-39.6zm128 0c0 19.3 13.8 36.2 32 39.6V464h-64v52.6c18.2-3.4 32-20.3 32-39.6z">
+            </path>
+        </svg>College Debate
+		</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarNav" aria-controls="navbarNav"
+			aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item"><a class="nav-link" th:href="@{/}">Home</a></li>
+				<li class="nav-item"><a class="nav-link" th:href="@{/register}">Register</a>
+				</li>
+				<li class="nav-item active"><a class="nav-link"
+					th:href="@{/login}">Login<span class="sr-only">(current)</span></a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-md-6 login-container">
+				<h2 class="text-center">Login for College Debate</h2>
+				<form class="mt-5" action="/login" method="POST">
+					<div th:if="${param.error}"
+						class="alert alert-danger alert-dismissible fade show">
+						<span
+							th:text="${session['SPRING_SECURITY_LAST_EXCEPTION'].message}"></span>
+						<button type="button" class="close" data-dismiss="alert"
+							aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="form-group">
+						<label for="username">Username</label> <input type="email"
+							class="form-control" id="username" name="username" required
+							placeholder="Enter your email id">
+					</div>
+					<div class="form-group">
+						<label for="password">Password</label> <input type="password"
+							class="form-control" id="password" name="password" required
+							placeholder="Enter your password">
+					</div>
+
+					<div class="d-flex justify-content-between">
+						<button type="submit" class="btn btn-secondary btn-md">Login</button>
+						<p class="text-center">
+							Don't have an account? <a href="/register"
+								class="text-dark font-weight-bolder">Register now</a>
+						</p>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<!-- jQuery (required for Bootstrap JS) -->
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<!-- Bootstrap JS (Required for dismissal functionality) -->
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

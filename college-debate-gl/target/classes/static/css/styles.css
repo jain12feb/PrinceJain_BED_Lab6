@@ -1,0 +1,48 @@
+body {
+	background-color: #f8f9fa;
+}
+
+.login-container {
+	margin-top: 2%;
+}
+
+.pointer {
+	cursor: pointer;
+}
+
+.access-denied {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	background-color: #f8f9fa;
+}
+
+.access-denied-container {
+	max-width: 600px;
+}
+
+/* Custom CSS for fixed table row height */
+.table-fixed-height td {
+	height: 100px; /* Adjust the height as needed */
+	max-height: 100px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	vertical-align: middle;
+}
+
+.sort-icon {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    vertical-align: middle;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+}
+
+.sort-icon.asc {
+    border-bottom: 4px solid;
+}
+
+.sort-icon.desc {
+    border-top: 4px solid;
+}
